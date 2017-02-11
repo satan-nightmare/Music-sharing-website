@@ -1,0 +1,734 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"dec",
+				"text-decoration"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"l",
+				"link\tTag"
+			],
+			[
+				"head",
+				"header\tTag"
+			],
+			[
+				"album",
+				"album_id"
+			],
+			[
+				"re",
+				"render"
+			],
+			[
+				"Ca",
+				"Charfield"
+			],
+			[
+				"ur",
+				"urllib"
+			],
+			[
+				"onm",
+				"onmouseover\tAttr"
+			],
+			[
+				"onc",
+				"onclick\tAttr"
+			],
+			[
+				"text",
+				"textnew"
+			],
+			[
+				"tex",
+				"textnew"
+			],
+			[
+				"url",
+				"urllib2"
+			],
+			[
+				"try",
+				"try\tTry/Except"
+			],
+			[
+				"u",
+				"urlopen"
+			],
+			[
+				"ht",
+				"html_doc"
+			],
+			[
+				"ch",
+				"check"
+			],
+			[
+				"st",
+				"stlen"
+			],
+			[
+				"is",
+				"isEmpty"
+			],
+			[
+				"dis",
+				"dijkstra"
+			],
+			[
+				"make",
+				"makestack"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "music/urls.py",
+			"settings":
+			{
+				"buffer_size": 228,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "music/views.py",
+			"settings":
+			{
+				"buffer_size": 642,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "music/templates/music/detail.html",
+			"settings":
+			{
+				"buffer_size": 231,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "music/templates/music/index.html",
+			"settings":
+			{
+				"buffer_size": 323,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/sumit/New Volume/Web/index.html",
+			"settings":
+			{
+				"buffer_size": 754,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/sumit/New Volume/Web/main.css",
+			"settings":
+			{
+				"buffer_size": 647,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import urllib2\nimport cookielib\nfrom getpass import getpass\nimport sys\nimport os\nfrom stat import *\n\nmessage = raw_input(\"Enter text: \")\nnumber = raw_input(\"Enter number: \")\n\nif __name__ == \"__main__\":    \n    username = \"your_login_id\"\n    passwd = \"your_password\"\n\n    message = \"+\".join(message.split(' '))\n\n #logging into the sms site\n    url ='http://site24.way2sms.com/Login1.action?'\n    data = 'username='+username+'&password='+passwd+'&Submit=Sign+in'\n\n #For cookies\n\n    cj= cookielib.CookieJar()\n    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))\n\n #Adding header details\n    opener.addheaders=[('User-Agent','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120')]\n    try:\n        usock =opener.open(url, data)\n    except IOError:\n        print \"error\"\n        #return()\n\n    jession_id =str(cj).split('~')[1].split(' ')[0]\n    send_sms_url = 'http://site24.way2sms.com/smstoss.action?'\n    send_sms_data = 'ssaction=ss&Token='+jession_id+'&mobile='+number+'&message='+message+'&msgLen=136'\n    opener.addheaders=[('Referer', 'http://site25.way2sms.com/sendSMS?Token='+jession_id)]\n    try:\n        sms_sent_page = opener.open(send_sms_url,send_sms_data)\n    except IOError:\n        print \"error\"\n        #return()\n\n    print \"success\" \n    #return ()",
+			"settings":
+			{
+				"buffer_size": 1319,
+				"line_ending": "Unix",
+				"name": "import urllib2"
+			}
+		},
+		{
+			"file": "website/urls.py",
+			"settings":
+			{
+				"buffer_size": 817,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "music/models.py",
+			"settings":
+			{
+				"buffer_size": 590,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "music/admin.py",
+			"settings":
+			{
+				"buffer_size": 146,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "website/settings.py",
+			"settings":
+			{
+				"buffer_size": 3129,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/sumit/.virtualenvs/django1/website",
+		"/home/sumit/.virtualenvs/django1/website/music",
+		"/home/sumit/.virtualenvs/django1/website/music/templates",
+		"/home/sumit/.virtualenvs/django1/website/music/templates/music",
+		"/home/sumit/.virtualenvs/django1/website/website"
+	],
+	"file_history":
+	[
+		"/home/sumit/.virtualenvs/django1/website/music/template/music/index.html",
+		"/home/sumit/.virtualenvs/django1/website/template/music/index.html",
+		"/media/sumit/New Volume/Python/test.py",
+		"/media/sumit/New Volume/Python/kissanime.py",
+		"/media/sumit/New Volume/Study material/Latex/test.tex",
+		"/media/sumit/New Volume/Study material/Latex/main.tex",
+		"/media/sumit/New Volume/Python/sms.py",
+		"/media/sumit/New Volume/Python/youtube.py",
+		"/media/sumit/New Volume/Python/yt.sh",
+		"/media/sumit/New Volume/Python/Selenium/web3.py",
+		"/media/sumit/New Volume/Python/web.py",
+		"/media/sumit/New Volume/Study material/Cprograms/Shittyquestions/bst.c",
+		"/media/sumit/New Volume/Python/Porn/web2.py",
+		"/media/sumit/New Volume/Python/web3.py",
+		"/media/sumit/New Volume/Python/Testfolder/web2.py",
+		"/media/sumit/New Volume/Study material/Cprograms/Codeforces/q1.cpp",
+		"/media/sumit/New Volume/Study material/Cprograms/Codeforces/733A.cpp",
+		"/media/sumit/New Volume/Study material/Cprograms/Codeforces/q2.cpp",
+		"/media/sumit/New Volume/Study material/Cprograms/Shittyquestions/heap.c",
+		"/media/sumit/New Volume/Study material/Cprograms/Shittyquestions/dijkstra.c",
+		"/media/sumit/New Volume/Study material/Cprograms/Shittyquestions/posttoin.c",
+		"/media/sumit/New Volume/Study material/Cprograms/Codechef/FRIEMEETnew.cpp",
+		"/media/sumit/New Volume/Study material/Cprograms/Codechef/FRIEMEET.cpp",
+		"/media/sumit/New Volume/Study material/Cprograms/disjointset.cpp",
+		"/media/sumit/New Volume/Study material/Cprograms/dijkstras.cpp",
+		"/media/sumit/New Volume/Shell/evenodd.sh",
+		"/media/sumit/New Volume/Study material/Cprograms/avl.cpp",
+		"/media/sumit/New Volume/Shell/bubblesort.sh",
+		"/media/sumit/New Volume/Study material/Cprograms/Codechef/smt.cpp",
+		"/media/sumit/New Volume/Shell/test"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Charfield"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"CharField"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "music/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "music/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								417,
+								417
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "music/templates/music/detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "music/templates/music/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/media/sumit/New Volume/Web/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								510,
+								510
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/media/sumit/New Volume/Web/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 72.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1319,
+								1319
+							]
+						],
+						"settings":
+						{
+							"auto_name": "import urllib2",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "website/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 817,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								814,
+								814
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "music/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								537,
+								537
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "music/admin.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								144,
+								144
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "website/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1248,
+								1248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 936.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "website.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
